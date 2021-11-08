@@ -1,11 +1,11 @@
 import re
-from typing import Dict
+from typing import DefaultDict
 
 
-def count_words(sentence: str) -> Dict[str, int]:
-    counter: Dict[str, int] = {}
-    is_word = lambda w: w != ''
+def count_words(sentence: str) -> DefaultDict[str, int]:
+    counter = DefaultDict(int)
+    def is_word(w): return w != ''
     for word in filter(is_word, re.split("[^0-9a-z']", sentence.lower())):
-        word = word.strip("'")
-        counter[word] = counter.setdefault(word, 0) + 1
+        counter[word.strip("'")] += 1
+
     return counter
