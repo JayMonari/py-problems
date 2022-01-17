@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List, Optional
 
 
 class TreeNode:
@@ -8,14 +8,14 @@ class TreeNode:
         self.right = right
 
 
-def make_min_height_bst(sorted_list: List[int]) -> Union[TreeNode, None]:
+def make_min_height_bst(sorted_list: List[int]) -> Optional[TreeNode]:
     return construct(sorted_list, 0, len(sorted_list) - 1)
 
 
 def construct(
         sorted_list: List[int],
         start_idx: int,
-        end_idx: int) -> Union[TreeNode, None]:
+        end_idx: int) -> Optional[TreeNode]:
     if start_idx > end_idx:
         return None
 

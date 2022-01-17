@@ -1,11 +1,11 @@
-from typing import Any, Tuple, Union
+from typing import Any, Optional, Tuple
 
 
 class BinarySearchTree:
     def __init__(self, value: int, left=None, right=None) -> None:
         self.value = value
-        self.left: Union[BinarySearchTree, None] = left
-        self.right: Union[BinarySearchTree, None] = right
+        self.left: Optional[BinarySearchTree] = left
+        self.right: Optional[BinarySearchTree] = right
 
     def insert(self, value: int) -> None:
         side = self.left if value < self.value else self.right
