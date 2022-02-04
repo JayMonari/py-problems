@@ -1,12 +1,13 @@
 from typing import List
+from typing_extensions import Self
 
 
 class Node:
-    def __init__(self, name: str):
+    def __init__(self, name: str) -> None:
         self.name: str = name
         self.children: List[Node] = []
 
-    def add_child(self, name: str):
+    def add_child(self, name: str) -> Self:
         self.children.append(Node(name))
         return self
 
